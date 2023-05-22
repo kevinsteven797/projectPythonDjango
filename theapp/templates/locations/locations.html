@@ -1,0 +1,34 @@
+{% include 'header.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/locations.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/css/header.css' %}">
+<div class="container text-center content">
+    <h1>Listado de ubicaciones</h1>
+    <div class="row location-list">
+        {% for location in locations %}
+            <div class="col-md-4">
+                <div class="location-card">
+                    <img class="location-img" src="https://via.placeholder.com/300" alt="Ubicación">
+                    <div class="location-details">
+                        <h3 class="location-title">{{ location.name }}</h3>
+                        <p class="location-description">Descripción de la ubicación.</p>
+                        <p class="location-address">Capacidad Máxima: {{ location.max_tickets }}</p>
+                        {% if user.is_superuser  %}
+                        <a href="{% url 'location_update' location.id %}" class="location-link">Editar</a>
+                        <a href="{% url 'location_delete' location.id %}" class="location-delete">Eliminar</a>
+                        {% endif %}
+                    </div>
+                </div>  
+            </div>
+        {% endfor %}
+    </div>
+    {% if user.is_superuser %}
+        <div class="boton text-center">
+            <a href="createLocation/" class="btn">Agregar Ubicación</a>
+        </div>
+    {% endif %}
+</div>
+
+
+
+{% include 'footer.html' %}

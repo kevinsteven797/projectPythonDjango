@@ -1,0 +1,52 @@
+{% include 'header.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/events.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/css/header.css' %}">
+
+
+<div class="contanier content p-5">
+    <div class="event-card">
+        <div class="event-card__image">
+          <img src="{% static 'images/auditorio.jpg' %}" alt="Evento" class="imagen-personalizada">
+        </div>
+        <div class="event-card__content">
+          <h3 class="event-card__title">{{event.name}}</h3>
+          <p class="event-card__description">Descripción del evento Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="event-card__details">
+            <p class="event-card__date">Fecha: {{event.date}}</p>
+            <p class="event-card__location">Lugar: {{location.name}}</p>
+            <p class="event-card__location">Tickets Disponibles: 40000000000000</p>
+          </div>
+        </div>
+    </div>
+    <h4 class="mt-4 text-center">Detalle de Reservación</h4>
+    <form method="post" class="my-form">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="{{ formulario.nameUser.id_for_label }}">Nombre:</label>
+                    <input type="text" name="nameUser" class="form-control" id="{{ formulario.nameUser.id_for_label }}">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="{{ formulario.email.id_for_label }}">Email:</label>
+                    <input type="email" name="email" class="form-control" id="{{ formulario.email.id_for_label }}">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="{{ formulario.numTickets.id_for_label }}">Cantidad Tickets:</label>
+                    <input type="number" name="numTickets" class="form-control" id="{{ formulario.numTickets.id_for_label }}">
+                </div>
+            </div>
+            <input type="hidden" name="idEvent" value="{{event.id}}">
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Reservar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% include 'footer.html' %}

@@ -1,0 +1,21 @@
+{% include 'header.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/create_location.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/css/header.css' %}">
+
+<div class="container content text-center">
+    <div class="alert alert-danger mt-5" role="alert">
+        <h2>Confirmación de eliminación de Ubicación</h2>
+        <p>¿Estas seguro de eliminar {{location.name}}?</p>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a href="/locations" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+
+
+
+{% include 'footer.html' %}

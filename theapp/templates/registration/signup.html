@@ -1,0 +1,47 @@
+<!-- signup.html -->
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/login.css' %}">
+</head>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Registrarse</h5>
+        </div>
+        <div class="card-body">  
+            {% if form.errors %}
+                <div class="alert alert-danger">
+                    <ul class="mb-0">
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %} 
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}">Nombre de usuario</label>
+                    {{ form.username }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.password.id_for_label }}">Contraseña</label>
+                    {{ form.password }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.confirm_password.id_for_label }}">Confirmar contraseña</label>
+                    {{ form.confirm_password }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">Correo electrónico</label>
+                    {{ form.email }}
+                </div>
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}

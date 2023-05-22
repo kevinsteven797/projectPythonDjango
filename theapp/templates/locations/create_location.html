@@ -1,0 +1,23 @@
+{% include 'header.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/create_location.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/css/header.css' %}">
+
+<div class="container content">
+    <h1> Crear Ubicación</h1>
+    <form method="post" class="my-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ formulario.name.id_for_label }}">Nombre:</label>
+            <input type="text" name="name" value="{{location.name}}" class="form-control" id="{{ formulario.name.id_for_label }}">
+        </div>
+        <div class="form-group">
+            <label for="{{ formulario.max_tickets.id_for_label }}">Capacidad Máxima:</label>
+            <input type="text" name="max_tickets" value="{{location.max_tickets}}" class="form-control" id="{{ formulario.max_tickets.id_for_label }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+    
+</div>
+
+{% include 'footer.html' %}

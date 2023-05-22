@@ -1,0 +1,157 @@
+.boton {
+    bottom:0;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: scale(0.9);
+    box-shadow: none;
+}
+
+.card {
+    max-width: 300px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.card-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #008000;
+    margin-bottom: 10px;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.card-button-delete {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e03a32;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.card-button-buy {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6ce032;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #45a049;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-top: 85px;
+  }
+  
+  .event-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .event-card__image img {
+    width: 100%;
+    height: 167px;
+    object-fit: cover;
+  }
+  
+  .event-card__content {
+    padding: 20px;
+  }
+  
+  .event-card__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .event-card__description {
+    margin-bottom: 10px;
+  }
+  
+  .event-card__details {
+    margin-bottom: 10px;
+  }
+  
+  .event-card__date,
+  .event-card__location {
+    margin-bottom: 5px;
+  }
+  
+  .event-card__button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .event-card__button:hover {
+    background-color: #0056b3;
+  }

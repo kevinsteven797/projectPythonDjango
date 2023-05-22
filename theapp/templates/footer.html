@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Agregar los enlaces a los archivos CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Agregar tu propio archivo de estilos CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/footer.css' %}">
+</head>
+<body>
+    <!-- Contenido de la página -->
+    <div class="site-content">
+        <!-- Aquí va el contenido de la página -->
+    </div>
+
+    <!-- El footer -->
+    <footer class="bg-dark text-white">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Información de Contacto</h3>
+                    <p>Kevin Steven Perez Pineda</p>
+                    <p>Teléfono: 3104593997</p>
+                    <p>Email: kevinsteven797@gmail.com</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Enlaces Útiles</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Agregar los scripts de jQuery y Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

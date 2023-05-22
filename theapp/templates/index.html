@@ -1,0 +1,15 @@
+{% include 'header.html' %}
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/header.css' %}">
+</head>
+<div class="container content">
+    <h1>Welcome to the jungle!</h1>
+    
+    <div class="background">
+        <p>Hola! {{user}}</p>
+    </div>
+</div>
+
+{% include 'footer.html' %}
