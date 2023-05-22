@@ -65,6 +65,7 @@ def profile(request):
     return render(request, 'index.html', context)
 
 #Muestra todas las locaciones creadas 
+@login_required
 def location(request):
     locations = Location.objects.all()
     user = User.objects.get(id=request.user.id)
@@ -74,6 +75,7 @@ def location(request):
     })
 
 #Crear nuevas locaciones y las agrega a la base de datos
+@login_required
 @csrf_protect
 def create_location(request):
     if request.method == 'POST':
@@ -90,6 +92,7 @@ def create_location(request):
     
     return render(request, 'locations/create_location.html', {'formulario': formLocation})
 
+@login_required
 def delete_location(request, id):
     location = Location.objects.get(id=id)
     if request.method == 'POST':
@@ -100,6 +103,7 @@ def delete_location(request, id):
         'location': location
     })
 
+@login_required
 def update_location(request, id):
     location = Location.objects.get(id=id)
     if request.method == 'POST':
@@ -118,6 +122,7 @@ def update_location(request, id):
 
 
 #Myuestra todos los eventos creados
+@login_required
 def event(request, order_by=None):
     events = Event.objects.values()
     locations = Location.objects.all()
@@ -154,6 +159,7 @@ def event(request, order_by=None):
     })
 
 #Crea nuevos eventos y los guarda en la base de datos 
+@login_required
 @csrf_protect
 def create_event(request):
     locations = Location.objects.all()
@@ -185,7 +191,7 @@ def delete_event(request, id):
         'event': event
     })
     
-
+@login_required
 def update_event(request, id):
     event = Event.objects.get(id=id)
     if request.method == 'POST':
@@ -204,7 +210,7 @@ def update_event(request, id):
         'locations': Location.objects.all()
     })
         
-
+@login_required
 @csrf_protect
 def reserve_event(request, id):
     event = Event.objects.get(id=id)
